@@ -1,0 +1,6 @@
+// INIT
+    // READ N SECONDS AT 0 CH4
+    // READ M SECONDS AT X CH4
+// SENSOR LOOP
+    // READ ANALOG IN LOOP
+    // 
