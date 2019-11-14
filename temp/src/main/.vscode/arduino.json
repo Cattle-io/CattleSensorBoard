@@ -1,0 +1,5 @@
+{
+    "board": "arduino:avr:one",
+    "programmer": "AVR ISP",
+    "sketch": "main.ino"
+}
