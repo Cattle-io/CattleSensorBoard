@@ -7,20 +7,20 @@ class Led {
    public:
 
         Led(void);
-        Led(string, int, bool);
+        Led(string, uint8_t, bool);
         ~Led();
 
         void on();
         void off();
         
-        void setPin(int);
+        void setPin(uint8_t);
         void setState(bool);
         void setName(string);
         void setDescription(string);
         void setIsBlinking(bool);
         void setBlinkingMiliSeconds(int);
 
-        int getPin();
+        uint8_t getPin();
         bool getState();
         string getName();
         string getDescription();
@@ -29,7 +29,7 @@ class Led {
 
    private:  
 
-        int  $pin;
+        uint8_t  $pin;
         int  $blinkingMiliSeconds;
         bool $state;
         bool $isBliking;

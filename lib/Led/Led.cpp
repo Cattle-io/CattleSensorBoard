@@ -2,7 +2,6 @@
 #include "Led.h"
 
 
-
 /**
  * ------------------------------------------------------
  * -- LED :: CONSTRUCTORS
@@ -12,10 +11,13 @@ Led::Led(void){
     pinMode(D0, OUTPUT); 
 };
 
-Led::Led(string name, int pin, bool state){
-    this->$pin = pin;
-    this->$name = name;
-    this->$state = state;
+Led::Led(string name, uint8_t pin, bool state){
+
+    $pin = pin;
+    $name = name;
+    $state = state;
+
+    pinMode($pin, OUTPUT); 
 };
 
 Led::~Led(){
@@ -30,29 +32,16 @@ Led::~Led(){
  * ------------------------------------------------------
  * */ 
 
-void Led::setPin(int pin){
+void Led::setPin(uint8_t pin){
     $pin = pin;
-    switch (pin){
-
-        case 0:
-            pinMode(D0, OUTPUT); 
-            break;
-        case 1:
-            pinMode(D1, OUTPUT); 
-            break;
-        default:
-            pinMode(D0, OUTPUT); 
-            break;
-    }
- 
 };
 
 void Led::setState(bool state){
     $state = state;
     if(state){
-       digitalWrite(D0, HIGH); 
+       digitalWrite($pin, HIGH); 
     }else{
-       digitalWrite(D0, LOW); 
+       digitalWrite($pin, LOW); 
     }
     
 };
@@ -83,7 +72,7 @@ void Led::setBlinkingMiliSeconds(int miliSeconds){
  * ------------------------------------------------------
  * */   
 
-int Led::getPin(){
+uint8_t Led::getPin(){
     return $pin;
 };
 bool Led::getState(){
